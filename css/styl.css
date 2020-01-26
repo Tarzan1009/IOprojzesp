@@ -1,0 +1,292 @@
+.bg-yellow {
+    background-color: #FED416;
+
+}
+
+#paczkomaty{
+    padding: 1em 0.5em 0 0.5em;
+}
+
+.paczkomat{
+    margin-top: 0.5em;
+    background-color: #FED416;
+    color: gray;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+    width: auto;
+}
+
+
+.btn-primary {
+    background-color: #FED416;
+}
+
+.btn-secondary {
+    background-color: gray;
+}
+
+.przycisk{
+    width: 10em;
+}
+
+.dwielinie{
+    height: 4em;
+  }
+
+.outer{
+    padding: 0 5px 0 5px;
+}
+
+#outer-kod{
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+#kod-field{
+    width: auto;
+    background-color: white;
+    color: gray;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#opcje{
+    height: 100%;
+    padding-top: 5%;
+}
+
+.okno-header{
+    width: auto;
+    background-color: gray;
+    color: white;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.opcja{
+    padding: 0.5em;
+    text-align: center;
+    background-color: #FED416;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#zamknij{
+    width: auto;
+    text-align: right;
+    padding-bottom: 0.5em;
+    color: gray;
+}
+
+#window{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    background-color: #FED416;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+#nadaj {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#kod{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#przyciski{
+    padding-top: 10em;
+}
+
+#witaj-zew{
+    padding-top: 10em;
+}
+
+.close{
+    color: #303030;
+}
+
+#witaj {
+    background-color: #FED416;
+    color: gray;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#paczki-title{
+    background-color: #FED416;
+    color: gray;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+}
+
+body {
+    overflow-x: hidden;
+    background-image: url("https://ocs.pl/wp-content/uploads/2017/04/kurier.jpg");
+}
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-right: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 250px;
+    width: 0;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #FED416;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sidebar-nav{
+    color: white;
+}
+
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    height: 100%;
+}
+
+
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: 0px;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 0;
+    }
+    #wrapper.toggled {
+        padding-right: 250px;
+    }
+    #sidebar-wrapper {
+        width: 0;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+
+.mapa {
+  max-height: 80%;
+  max-width: 80%;
+}
+
+.responsive-map-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
