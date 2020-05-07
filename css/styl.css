@@ -4,7 +4,7 @@
 }
 
 #paczkomaty{
-    padding: 1em 0.5em 0 0.5em;
+    padding: 1em 0.5em 0 1em;
 }
 
 .paczkomat{
@@ -106,7 +106,7 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
 
@@ -120,7 +120,7 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
 
@@ -144,6 +144,15 @@
     text-align: center;
 }
 
+#options {
+    background-color: #FED416;
+    color: gray;
+    margin-top: 2em;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+}
+
 #paczki-title{
     background-color: #FED416;
     color: gray;
@@ -152,9 +161,13 @@
     text-align: center;
 }
 
+#paczkomat{
+}
+
 body {
     overflow-x: hidden;
     background-image: url("https://ocs.pl/wp-content/uploads/2017/04/kurier.jpg");
+    background-repeat: no-repeat;
 }
 
 #wrapper {
@@ -170,7 +183,7 @@ body {
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 2;
     position: fixed;
     right: 250px;
     width: 0;
@@ -290,3 +303,4 @@ body {
     padding-bottom: 56.25%;
     overflow: hidden;
 }
+

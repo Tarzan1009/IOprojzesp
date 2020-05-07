@@ -1,18 +1,8 @@
-<?php
-//index.php
-include('database_connection.php');
-
-if (!isset($_SESSION["user_id"])) {
-    header("location:login.php");
-}
-
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Poczta</title>
+    <title>Zaloguj</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -25,8 +15,10 @@ if (!isset($_SESSION["user_id"])) {
 
     <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" height="30px"></a>
-            <a class="navbar-brand" href="#">Poczta</a>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" height="30px"> Poczta</a>
+            <ul> <?php
+                include("data.php");
+                ?> </ul>
         </ul>
         <form class="form-inline my-2 my-md-0"></form>
     </div>
@@ -41,33 +33,28 @@ if (!isset($_SESSION["user_id"])) {
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand"><a href="#"> Panel Klienta </a></li>
-            <li><a href="#">Znajdź paczkomat</a></li>
-            <li><a href="paczki.php">Paczki</a></li>
-            <li><a href="#">Informacje</a></li>
-            <li><a href="logout.php">Wyloguj</a></li>
         </ul>
     </div> <!-- /#sidebar-wrapper -->
     <div id="page-content-wrapper">
         <div class="row" id="witaj-zew">
             <div class="container-fluid col-md-8" id="witaj">
-
-                <h1>Witaj ponownie
-
-
-                    <?php
-                    $data = $connect->query("SELECT * from register_user where 	register_user_id = '" . $_SESSION['user_id'] . "';")->fetchAll();
-                    foreach ($data as $row) {
-                        echo $row['user_name'] . "\n";
-                        echo $row['user_surname'] . "\n";
-                    }
-
-
-                    ?>
-
-                </h1>
-
-                <h4 align="center"></h4>
-
+                <br/>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="kurier_select">Login</label>
+                        <input type="text" class="form-control" id="login">
+                    </div>
+                    <div class="form-group">
+                        <label>Hasło</label>
+                        <input type="password" class="form-control" id="pwd">
+                        <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" onclick="kierownik()" class="btn btn-secondary btn-lg" style="margin-bottom: 1em">Zaloguj</button>
+                    </div>
+                </form>
+                <br>
+                <br>
             </div>
         </div>
     </div>
@@ -92,8 +79,10 @@ if (!isset($_SESSION["user_id"])) {
         });
     });
 
+    function kierownik() {
+        location.href = "pracownikwitaj.php"
+    }
+
 </script>
-
 </body>
-
 </html>

@@ -5,7 +5,7 @@ include('database_connection.php');
 
 if(isset($_SESSION['user_id']))
 {
-	header("location:index.php");
+	header("location:witaj.php");
 }
 
 $message = '';
@@ -105,8 +105,10 @@ if(isset($_POST["register"]))
 
 		      <div class="collapse navbar-collapse" id="navbarsExample02">
 		          <ul class="navbar-nav mr-auto">
-		              <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" height="30px"></a>
-		              <a class="navbar-brand" href="#">Poczta</a>
+		                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" height="30px"> Poczta</a>
+										<ul> <?php
+											include("data.php");
+										?> </ul>
 		          </ul>
 		          <form class="form-inline my-2 my-md-0"></form>
 		      </div>
@@ -121,9 +123,6 @@ if(isset($_POST["register"]))
 		      <div id="sidebar-wrapper">
 		          <ul class="sidebar-nav">
 		              <li class="sidebar-brand"><a href="#"> Panel Klienta </a></li>
-		              <li><a href="#">Znajdź paczkomat</a></li>
-		              <li><a href="paczki.php">Paczki</a></li>
-		              <li><a href="#">Informacje</a></li>
 		          </ul>
 		      </div> <!-- /#sidebar-wrapper -->
 		<div id="page-content-wrapper">
@@ -133,22 +132,24 @@ if(isset($_POST["register"]))
 					<form method="post" id="register_form">
 						<?php echo $message; ?>
 						<div class="form-group">
-							<label>User Name</label>
+							<label>Imię</label>
 							<input type="text" name="user_name" class="form-control" pattern="[a-zA-Z ]+" required />
 						</div>
 						<div class="form-group">
-							<label>User Surname</label>
+							<label>Nazwisko</label>
 							<input type="text" name="user_surname" class="form-control" pattern="[a-zA-Z ]+" required />
 						</div>
 						<div class="form-group">
-							<label>User Email</label>
+							<label>E-Mail</label>
 							<input type="email" name="user_email" class="form-control" required />
 						</div>
 						<div class="form-group">
-							<input type="submit" name="register" id="register" value="Register" class="btn btn-info" />
+							<input type="submit" name="register" id="register" value="Register" class="btn btn-secondary"/>
 						</div>
 					</form>
-					<p align="right"><a href="login.php">Login</a></p>
+                  <button type="button" onclick="login()" class="btn przycisk btn-secondary">Zaloguj</button>
+                  <br>
+                  <br>
 				</div>
 			</div>
 		</div>
@@ -172,6 +173,10 @@ if(isset($_POST["register"]))
 					}
 			});
 	});
+
+    function login() {
+        location.href = "login.php";
+    }
 
 </script>
 	</body>

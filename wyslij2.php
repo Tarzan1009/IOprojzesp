@@ -1,50 +1,46 @@
 <?php
 
+
+$rozmiar = 0;
+
+if ( !empty($_GET['rozmiar'])) {
+    $rozmiar = $_REQUEST['rozmiar'];
+}
+
+if ( !empty($_POST)) {
+    // keep track post values
+    $rozmiar = $_POST['rozmiar'];
+}
+
+
 include('database_connection.php');
 
+//$sql = "SELECT    *
+//FROM      paczka
+//ORDER BY  your_auto_increment_field DESC
+//LIMIT     1;";
+//$result = $connect->query($sql);
+//$row = $result->fetch_assoc();
+$kod_przesylki = rand(10e12, 10e16);
+$register_user_id = $_SESSION['user_id'];
+$connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$insert_query = "
+		INSERT INTO paczka
+		(nr_paczki, rozmiar, register_user_id)
+		VALUES ('$kod_przesylki', '$rozmiar', '$register_user_id')
+		";
+$statement = $connect->prepare($insert_query);
 
-//switch ($_POST['submit']) {
-//    case 'standard':
-//        $_SESSION['rozmiar'] = "Standard";
-//        break;
-//    case 'express':
-//        $_SESSION['rozmiar']  = "Express";
-//        break;
-//    case 'gabaryt':
-//        $_SESSION['rozmiar']  = "Gabaryt";
-//        break;
-//    case 'gabaryt_express':
-//        $_SESSION['rozmiar']  = "Gabaryt_Express";
-//        break;
-//}
+$statement->execute(
+    array(
+        ':nr_paczki' => $kod_przesylki,
+        ':rozmiar' => $rozmiar,
+        ':register_user_id' => $register_user_id,
+    )
+);
+//// use exec() because no results are returned
+//$connect->exec($insert_query);
 
-//if (isset($_POST["submit"])) {
-//    try {
-//        // set the PDO error mode to exception
-//        $register_user_id = $_SESSION['user_id'];
-//        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//        $insert_query = "
-//		INSERT INTO paczka
-//		(nr_paczki, rozmiar, register_user_id)
-//		VALUES ('$kod_przesylki', '$rozmiar', '$register_user_id')
-//		";
-//        $statement = $connect->prepare($insert_query);
-//
-//        $statement->execute(
-//            array(
-//                ':nr_paczki' => $kod_przesylki,
-//                ':rozmiar' => $rozmiar,
-//                ':register_user_id' => $register_user_id,
-//            )
-//        );
-//        // use exec() because no results are returned
-//        $connect->exec($insert_query);
-//    } catch (PDOException $e) {
-//        echo $insert_query . "<br>" . $e->getMessage();
-//    }
-//
-//    $connect = null;
-//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +53,7 @@ include('database_connection.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styl.css">
-
+    <script src="js/clipboard.js-master/dist/clipboard.min.js"></script>
 </head>
 <body>
 
@@ -70,8 +66,8 @@ include('database_connection.php');
                 include("data.php");
                 ?> </ul>
         </ul>
-        <form class="form-inline my-2 my-md-0"></form>
 
+        <form class="form-inline my-2 my-md-0"></form>
     </div>
     <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
@@ -83,8 +79,8 @@ include('database_connection.php');
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a href="witaj.php"> Panel Klienta </a></li>
-            <li><a href="wyslij.php">Wyślij paczkę</a></li>
+            <li class="sidebar-brand"><a href="#"> Panel Klienta </a></li>
+            <li><a href="paczki.php">Wyślij paczkę</a></li>
             <li><a href="informacjeoprzesylce.php">Paczki</a></li>
             <li><a href="logout.php">Wyloguj</a></li>
         </ul>
@@ -111,8 +107,10 @@ include('database_connection.php');
                             <br>
                         </h3>
                     </div>
-                    <form method="post">
-                        <a class="btn mx-auto przycisk btn-secondary" href="wyslij2.php?rozmiar=standard">Wybierz</a>
+                    <form method="post" na>
+                        <button type="submit" onclick="on()" name="submit" value="standard"
+                                class="btn mx-auto przycisk btn-secondary">Wybierz
+                        </button>
                     </form>
                 </div>
             </div>
@@ -136,7 +134,9 @@ include('database_connection.php');
                         </h3>
                     </div>
                     <form method="post">
-                        <a class="btn mx-auto przycisk btn-secondary" href="wyslij2.php?rozmiar=express">Wybierz</a>
+                        <button type="submit" onclick="on()" name="submit" value="express"
+                                class="btn mx-auto przycisk btn-secondary">Wybierz
+                        </button>
                     </form>
                 </div>
             </div>
@@ -160,7 +160,9 @@ include('database_connection.php');
                         </h3>
                     </div>
                     <form method="post">
-                        <a class="btn mx-auto przycisk btn-secondary" href="wyslij2.php?rozmiar=gabaryt">Wybierz</a>
+                        <button type="submit" onclick="on()" name="submit" value="gabaryt"
+                                class="btn mx-auto przycisk btn-secondary">Wybierz
+                        </button>
                     </form>
                 </div>
             </div>
@@ -184,7 +186,9 @@ include('database_connection.php');
                         </h3>
                     </div>
                     <form method="post">
-                        <a class="btn mx-auto przycisk btn-secondary" href="wyslij2.php?rozmiar=gabaryt_express">Wybierz</a>
+                        <button type="submit" onclick="on()" name="submit" value="gabaryt_express"
+                                class="btn mx-auto przycisk btn-secondary">Wybierz
+                        </button>
                     </form>
                 </div>
             </div>
@@ -210,12 +214,17 @@ include('database_connection.php');
                     echo base_convert($kod_przesylki, 10, 36) . "\n";
                     ?>
                 </div>
+
             </div>
             <div>
+                <button type="button" data-clipboard-target="#kod-field" class="btn przycisk copy dwielinie btn-primary">Skopiuj
+                    kod
+                </button>
                 <button type="button" onclick="paczkomat()" class="btn przycisk dwielinie btn-primary" id="wyslij">
                     Wybierz
                     paczkomat
                 </button>
+                <button type="button" onclick="openInNewTab()" class="btn przycisk dwielinie btn-primary">Kod QR</button>
             </div>
 
         </div>
@@ -241,47 +250,52 @@ include('database_connection.php');
         });
     });
 
+    new ClipboardJS('.copy');
+
+
+
+
     function paczkomat() {
-        location.href = "paczkomat.php";
+        var nr_paczki = 0;
+        nr_paczki = <?php echo json_encode($kod_przesylki); ?>;
+        location.href = "paczkomat.php?nr_paczki=".concat(nr_paczki);
     }
 
-    function wyslij2() {
-        location.href = "wyslij2.php";
+    window.onload=on();
+
+    function on() {
+        document.getElementById("kod").style.display = "block";
     }
 
-    function myFunction() {
-        /* Get the text field */
-        var copyText = document.getElementById("kod-field");
-
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-        /* Alert the copied text */
-        alert(copyText.value);
+    function off() {
+        document.getElementById("kod").style.display = "none";
     }
 
-    function standard() {
-        $rozmiar = "Standard";
+    // function myFunction() {
+    //     /* Get the text field */
+    //     var copyText = document.getElementById("myInput");
+    //
+    //     /* Select the text field */
+    //     copyText.select();
+    //     copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+    //
+    //     /* Copy the text inside the text field */
+    //     document.execCommand("copy");
+    //
+    //     /* Alert the copied text */
+    //     alert("Copied the text: " + copyText.value);
+    // }
+
+    function openInNewTab() {
+        var url = "qr.php?nr_paczki=<?php echo $kod_przesylki; ?>"
+        var win = window.open(url, '_blank');
+        win.focus();
     }
 
-    function express() {
-        $rozmiar = "Express"
-    }
-
-    function gabaryt() {
-        $rozmiar = "Gabaryt"
-    }
-
-    function gabaryt_express() {
-        $rozmiar = "Gabaryt Express"
-    }
 
 
 </script>
 
 </body>
 </html>
+

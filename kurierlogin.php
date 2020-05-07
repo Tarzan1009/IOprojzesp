@@ -1,9 +1,13 @@
+<?php
+//index.php
+include('database_connection.php');
 
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Paczki</title>
+    <title>Zaloguj</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -12,15 +16,14 @@
     <link rel="stylesheet" href="css/styl.css">
 </head>
 <body>
-
 <nav class="navbar navbar-expand navbar-dark bg-yellow">
 
     <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav mr-auto">
-              <a class="navbar-brand" href="witaj.php"><img src="img/logo.png" alt="logo" height="30px"> Poczta</a>
-              <ul> <?php
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" height="30px"> Poczta</a>
+            <ul> <?php
                 include("data.php");
-              ?> </ul>
+                ?> </ul>
         </ul>
         <form class="form-inline my-2 my-md-0"></form>
     </div>
@@ -35,52 +38,39 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand"><a href="#"> Panel Klienta </a></li>
-            <li><a href="wyslij.php.php">Wyślij paczkę</a></li>
-            <li><a href="informacjeoprzesylce.php">Paczki</a></li>
-            <li><a href="logout.php">Wyloguj</a></li>
         </ul>
     </div> <!-- /#sidebar-wrapper -->
-    <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="row" id="witaj-zew">
-            <div class="container-fluid col-md-4" id="witaj">
-                <h1>Paczki</h1>
-            </div>
-        </div>
-        <div class="row mx-auto">
-            <div class="col-md-8 mx-auto">
-                <div class="row" id="przyciski">
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-primary btn-lg disabled btn-block">Odbierz</button>
+            <div class="container-fluid col-md-8" id="witaj">
+                <br/>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="kurier_select">Kurier</label>
+                        <select class="form-control" id="kurier_select">
+                            <?php
+                            $sql = $connect->query("select * from kurier");
+                            foreach ($sql as $row) {
+                                echo '<option value="' . $row['id_kuriera'] . '">' . $row['imie'] . ' ' . $row['nazwisko'] . '</option>';
+                            } ?>
+                        </select>
                     </div>
-                    <div class="col-md-6">
-                        <button type="button" onclick="on()" class="btn btn-primary btn-lg btn-block">Nadaj</button>
+                    <div class="form-group">
+                        <label>Hasło</label>
+                        <input type="password" class="form-control" id="pwd">
+                        <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <button type="button" onclick="login()" class="btn btn-secondary btn-lg" style="margin-bottom: 1em">Zaloguj</button>
+                    </div>
+                </form>
+                <br>
+                <br>
             </div>
-        </div>
-    </div> <!-- /#page-content-wrapper -->
-</div> <!-- /#wrapper -->
-
-<div id="nadaj">
-    <div class="row">
-        <div class="col-md-4" id="window">
-            <div id="zamknij">
-                <button type="button" onclick="off()" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div id="nadaj-header">
-                Wybierz sposób wysyłki
-            </div>
-            <div>
-                <button type="button" onclick="wyslij()" class="btn przycisk btn-primary">Paczkomat</button>
-                <button type="button" class="btn przycisk btn-primary disabled">Kurier</button>
-            </div>
-
         </div>
     </div>
 </div>
+<!-- /#wrapper -->
 <!-- Bootstrap core JavaScript -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script> <!-- Menu Toggle Script -->
@@ -100,22 +90,18 @@
         });
     });
 
-
-    function wyslij()
-    {
-        location.href = "wyslij.php";
-    }
-
-
-    function on() {
-        document.getElementById("nadaj").style.display = "block";
-    }
-
-    function off() {
-        document.getElementById("nadaj").style.display = "none";
+    function login() {
+        var c = document.getElementById("kurier_select");
+        var kurier = c.options[c.selectedIndex].value;
+        var inputVal = document.getElementById("pwd").value;
+        if (inputVal = 'admin'){
+            location.href = "kurierwitaj.php?id_kuriera=".concat(kurier);
+        }else {
+            var element = document.getElementById("login");
+            element.classList.add("is-Invalid");
+        }
     }
 
 </script>
-
 </body>
 </html>

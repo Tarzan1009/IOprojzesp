@@ -1,32 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f415ad7-bd0e-49ab-b29c-acb906d34f83" name="Default Changelist" comment="" />
+    <list default="true" id="6f415ad7-bd0e-49ab-b29c-acb906d34f83" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/allpaczki.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allpaczki2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allpaczki3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kierownik.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kurierlogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kurierpaczki.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kurierwitaj.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/odbierz.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pracownikwitaj.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pracownikwitaj2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statusmsg.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statystyki.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wyslano.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wyslij2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zmieniono.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zmienkuriera.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zmienstatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styl.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email_verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/email_verification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/informacje.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paczki.php" beforeDir="false" afterPath="$PROJECT_DIR$/paczki.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyslij.php" beforeDir="false" afterPath="$PROJECT_DIR$/wyslij.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/PHPMailer/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\xampp\htdocs\projekt od Ali\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1WwhcWV0qLR6FprsWj60sh4sqPW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -50,21 +103,74 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580066643821</updated>
-      <workItem from="1580066645132" duration="739000" />
+      <workItem from="1580066645132" duration="1021000" />
+      <workItem from="1580067716461" duration="169000" />
+      <workItem from="1580215489249" duration="610000" />
+      <workItem from="1580216602512" duration="10077000" />
+      <workItem from="1580391192968" duration="10391000" />
+      <workItem from="1580402834170" duration="5224000" />
+      <workItem from="1580421203093" duration="19905000" />
+      <workItem from="1580442227956" duration="62000" />
+      <workItem from="1580442458578" duration="6529000" />
+      <workItem from="1580449352571" duration="1347000" />
+      <workItem from="1580473790990" duration="4398000" />
+      <workItem from="1581073991393" duration="444000" />
+      <workItem from="1583158936034" duration="40000" />
+      <workItem from="1583159003602" duration="40000" />
+      <workItem from="1583159059534" duration="21000" />
+      <workItem from="1583159098660" duration="31000" />
+      <workItem from="1583159532438" duration="81000" />
+      <workItem from="1583159838643" duration="31000" />
     </task>
+    <task id="LOCAL-00001" summary="pierwszy commit">
+      <created>1580067482799</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580067482799</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pierwszy commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="pierwszy commit" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="352" y="119" key="CommitChangelistDialog2" timestamp="1580067450061">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583159559176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="352" y="119" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580067450061" />
-    <state x="318" y="257" key="Vcs.Push.Dialog.v2" timestamp="1580067462499">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583159559176" />
+    <state x="352" y="119" key="CommitChangelistDialog2" timestamp="1580067846423">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="318" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580067462499" />
+    <state x="352" y="119" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580067846423" />
+    <state x="791" y="335" key="NewPhpClassDialog" timestamp="1580428968102">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="791" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580428968102" />
+    <state x="795" y="444" key="NewPhpFileDialog" timestamp="1580483690871">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="795" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580483690871" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1583159867768">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583159867768" />
+    <state x="318" y="257" key="Vcs.Push.Dialog.v2" timestamp="1580067489854">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="318" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580067489854" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1580401486590">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580401486590" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580433562087">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580433562087" />
   </component>
 </project>
